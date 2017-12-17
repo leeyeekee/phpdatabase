@@ -11,6 +11,14 @@ if ($connection->connect_errno) {
     exit();
 } else {
     printf("Connected to the database");
+    
+$query = "SELECT * from tablename" or die("Error in the consult.." . mysqli_error($connection));
+echo "Hello All.. Here is the list of users: <br>";
+$rs = $connection->query($query);
+while ($row = mysqli_fetch_assoc($rs)) {
+    echo "Id: ".$row['id'] . " Name: " . $row['name'] . "<br>";
+}
+echo "End of the list <br>";
 }
 $connection->close();
 ?>
