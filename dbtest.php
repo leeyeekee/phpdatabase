@@ -4,6 +4,7 @@ $dbport = getenv("MYSQL_SERVICE_PORT");
 $dbuser = getenv("databaseuser");
 $dbpwd = getenv("databasepassword");
 $dbname = getenv("databasename");
+$hostname = getenv("HOSTNAME");
 
 $connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
 if ($connection->connect_errno) {
@@ -14,7 +15,7 @@ if ($connection->connect_errno) {
     
 $query = "SELECT * from users" or die("Error in the consult.." . mysqli_error($connection));
 echo $dbname;
-    
+echo "<br> @" + $hostname + "<br>";    
 echo "<br> Hello All.. <br>";
 echo "Here is the list of users: <br>";
 $rs = $connection->query($query);
