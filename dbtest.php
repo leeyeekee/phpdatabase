@@ -15,7 +15,7 @@ if ($connection->connect_errno) {
     
 $query = "SELECT * from users" or die("Error in the consult.." . mysqli_error($connection));
 echo $dbname;
-echo "<br> @" + $hostname + "<br>";    
+echo $hostname;    
 echo "<br> Hello All.. <br>";
 echo "Here is the list of users: <br>";
 $rs = $connection->query($query);
