@@ -10,9 +10,10 @@ if ($connection->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 } else {
-    printf("Connected to the database");
+    printf("Connected to the database"+$dbname);
     
 $query = "SELECT * from users" or die("Error in the consult.." . mysqli_error($connection));
+echo "<br>"
 echo "Hello All.. Here is the list of users: <br>";
 $rs = $connection->query($query);
 while ($row = mysqli_fetch_assoc($rs)) {
