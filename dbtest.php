@@ -18,7 +18,7 @@ echo "<br> Hello All.. <br>";
 echo "Here is the list of users: <br>";
 $rs = $connection->query($query);
 while ($row = mysqli_fetch_assoc($rs)) {
-    echo "Id: ".$row['id'] . " Name: " . $row['name'] . "<br>";
+    echo "  Id: ".$row['id'] . " Name: " . $row['name'] . "<br>";
 }
 echo "End of the list <br>";
 }
